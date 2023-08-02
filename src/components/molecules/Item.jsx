@@ -17,7 +17,7 @@ export const Item = () => {
         <CardMedia
           sx={{ height: 140 }}
           image="src/img/example/store.png"
-          title="green iguana"
+          title="example"
         />
       </CardContent>
       <CardActions>
