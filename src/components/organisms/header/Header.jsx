@@ -1,7 +1,7 @@
 import SearchBar from "../../atoms/SearchBar"
 import { Grid } from "@mui/material"
 import { Logo } from "../../atoms/Logo"
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Cart from "../../atoms/Cart";
 export const Header = () => {
   return (<Grid container>
       
@@ -13,7 +13,8 @@ export const Header = () => {
   <SearchBar/>
     </Grid>
     <Grid item xs={2}>
-      <ShoppingCartIcon  color="success"/>
+      
+      <Cart/>
     </Grid>
   </Grid>
   )

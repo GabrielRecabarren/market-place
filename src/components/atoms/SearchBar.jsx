@@ -1,10 +1,9 @@
 import TextField from "@mui/material/TextField";
-import Stack from "@mui/material/Stack";
 import Autocomplete from "@mui/material/Autocomplete";
 
 export default function SearchBar() {
   return (
-    <Autocomplete
+    <Autocomplete 
       freeSolo
       id="free-solo-2-demo"
       disableClearable
