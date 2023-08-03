@@ -2,18 +2,30 @@ import { Box, Grid } from "@mui/material";
 import { Header } from "./components/organisms/header/Header";
 import { ItemList } from "./components/organisms/itemList/ItemList";
 import Footer from "./components/organisms/footer/Footer";
+import { useState } from "react";
 
 function App() {
+  const [cartItems, setCartItems] = useState([]);
+  const [cartItemCount, setCartItemCount] = useState(1);
+
+  const handleAddToCart = (item) => {
+    setCartItems((prevItems) => [...prevItems, item]);
+    setCartItemCount((prevCount) => prevCount + 1);
+    console.log(cartItemCount);
+  };
   return (
     <Grid container>
       <Grid item xs={12}>
         <Box border={2}>
-          <Header></Header>
+          <Header
+            cartItems={{ cartItems }}
+            cartItemCount={{ cartItemCount }}
+         />
         </Box>
       </Grid>
       <Grid item xs={12}>
         <Box border={2}>
-          <ItemList></ItemList>
+          <ItemList onAddToCart={handleAddToCart} />
         </Box>
       </Grid>
       <Grid item xs={12}>

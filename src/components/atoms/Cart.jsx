@@ -1,11 +1,12 @@
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Box, Container } from '@mui/material';
 
 const Cart = () => {
   return (
-    <div>
+    <Box>
       <ShoppingCartIcon  color="success"/>
       
-    </div>
+    </Box>
     
   )
 }

@@ -1,13 +1,13 @@
 import { ListItem } from "@mui/material";
 import {Item} from "../../molecules/Item";
-export const ItemList = () => {
+export const ItemList = ({onAddToCart}) => {
   return (
-    <>
+    
     <ListItem>
-      <Item></Item>
+      <Item onAddToCart={onAddToCart}></Item>
     </ListItem>
     
-    </>
+    
   )
 }
  
