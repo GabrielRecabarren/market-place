@@ -7,7 +7,8 @@ import {
   Typography,
 } from "@mui/material";
 
-export const Item = ({onAddToCart}) => {
+export const Item = ({item, onAddToCart}) => {
+  
   const handleAddToCartClick = (item) => {
     console.log(item);
     onAddToCart(item);
@@ -16,17 +17,17 @@ export const Item = ({onAddToCart}) => {
     <Card variant="outlined">
       <CardContent>
         <Typography variant="h5" color="text.primary" gutterBottom>
-          Product Name
+          {item.name}
         </Typography>
         <CardMedia
           sx={{ height: 140 }}
-          image="src/img/example/store.png"
-          title="example"
+          image={item.img}
+          title={item.name}
         />
       </CardContent>
       <CardActions>
-        <Button size="small">$0.00</Button>
-        <Button variant="contained" onClick={()=> handleAddToCartClick("hola")}>Add Item</Button>
+        <Button size="small">${item.price}</Button>
+        <Button variant="contained" onClick={()=> handleAddToCartClick(item)}>Add Item</Button>
       </CardActions>
     </Card>
   );
