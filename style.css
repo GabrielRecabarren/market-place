@@ -1,5 +1,5 @@
 
-@-webkit-keyframes bg-scrolling-reverse {
+/* @-webkit-keyframes bg-scrolling-reverse {
   100% {
     background-position: 50px 50px;
   }
@@ -38,7 +38,7 @@
   0% {
     background-position: 50px 50px;
   }
-}
+} */
 /* Main styles */
 body {
   margin-top: 13.5rem;

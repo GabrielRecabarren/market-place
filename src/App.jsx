@@ -1,7 +1,8 @@
 import { Box, Grid } from "@mui/material";
 import { Header } from "./components/organisms/header/Header";
-import { ItemList } from "./components/organisms/itemList/ItemList";
+import ItemList from "./components/organisms/itemList/ItemList";
 import Footer from "./components/organisms/footer/Footer";
+
 
 function App() {
   return (

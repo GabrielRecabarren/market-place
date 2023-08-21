@@ -7,23 +7,24 @@ import {
   Typography,
 } from "@mui/material";
 
-export const Item = () => {
+const Item = ({ product:{ title, image, price}}) => {
   return (
     <Card variant="outlined">
       <CardContent>
         <Typography variant="h5" color="text.primary" gutterBottom>
-          Product Name
+          {Item.title}
         </Typography>
         <CardMedia
           sx={{ height: 140 }}
-          image="src/img/example/store.png"
-          title="example"
+          image= { product.image}
+          title="green iguana"
         />
       </CardContent>
       <CardActions>
-        <Button size="small">$0.00</Button>
+        <Button size="small"> {product.price} </Button>
         <Button variant="contained">Add Item</Button>
       </CardActions>
     </Card>
   );
 };
+export default Item;
