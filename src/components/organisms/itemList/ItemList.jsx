@@ -1,13 +1,13 @@
 import { ListItem } from "@mui/material";
-import {Item} from "../../molecules/Item";
-export const ItemList = ({onAddToCart}) => {
+import { Item } from "../../molecules/Item";
+import { ErrorBoundary } from "../../../ErrorBoundary";
+import fakeProduct from "../../../data/fakeProducts.json"
+export const ItemList = ({ onAddToCart }) => {
   return (
-    
-    <ListItem>
-      <Item onAddToCart={onAddToCart}></Item>
-    </ListItem>
-    
-    
-  )
-}
- 
+    <ErrorBoundary>
+      <ListItem>
+        <Item item={fakeProduct[0]} onAddToCart={onAddToCart}></Item>
+      </ListItem>
+    </ErrorBoundary>
+  );
+};

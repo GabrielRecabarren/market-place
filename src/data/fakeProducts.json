@@ -1,0 +1,9 @@
+[
+
+    {
+        "id":1,
+        "name": "Perro",
+        "img": "src/img/example/perro.jpg",
+        "price": 20.95
+    }
+]
