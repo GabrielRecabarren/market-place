@@ -1,5 +1,5 @@
-
-/* @-webkit-keyframes bg-scrolling-reverse {
+/* 
+@-webkit-keyframes bg-scrolling-reverse {
   100% {
     background-position: 50px 50px;
   }
@@ -41,7 +41,7 @@
 } */
 /* Main styles */
 body {
-  margin-top: 13.5rem;
+  margin-top: 15px;
   color: #999;
   font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
   text-align: center;
