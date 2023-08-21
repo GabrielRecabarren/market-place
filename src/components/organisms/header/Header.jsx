@@ -1,6 +1,6 @@
 import SearchBar from "../../atoms/SearchBar";
 import { Grid } from "@mui/material";
-import Cart from "../../atoms/Cart";
+import SimpleBadge from "../../molecules/Badge";
 
 
 
@@ -14,7 +14,7 @@ export const Header = ({cartItems, cartItemCount}) => {
         <SearchBar />
       </Grid>
       <Grid item xs={2}>
-        <Cart cartItemCount={cartItemCount} cartItems={cartItems}/>
+        <SimpleBadge cartItemCount={cartItemCount} cartItems={cartItems}/>
       </Grid>
     </Grid>
   );
