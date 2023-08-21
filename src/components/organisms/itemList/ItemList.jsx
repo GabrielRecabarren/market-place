@@ -5,8 +5,14 @@ import fakeProduct from "../../../data/fakeProducts.json"
 export const ItemList = ({ onAddToCart }) => {
   return (
     <ErrorBoundary>
-      <ListItem>
-        <Item item={fakeProduct[0]} onAddToCart={onAddToCart}></Item>
+      <ListItem sx={{
+        gap: 5,
+      }}>
+        {fakeProduct.map((product, index) => {
+          return <Item key={product.id} {...product} onAddToCart={onAddToCart}></Item>
+
+        })
+      }
       </ListItem>
     </ErrorBoundary>
   );
