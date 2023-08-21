@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 
-const Item = ({ product:{ title, image, price}}) => {
+const Item = ( {title, price, image}) => {
   return (
     <Card variant="outlined">
       <CardContent>
@@ -16,12 +16,12 @@ const Item = ({ product:{ title, image, price}}) => {
         </Typography>
         <CardMedia
           sx={{ height: 140 }}
-          image= { product.image}
+          image= { image}
           title="green iguana"
         />
       </CardContent>
       <CardActions>
-        <Button size="small"> {product.price} </Button>
+        <Button size="small"> {price} </Button>
         <Button variant="contained">Add Item</Button>
       </CardActions>
     </Card>

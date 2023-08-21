@@ -1,4 +1,3 @@
-import React from "react";
 import useStoreApi from "../../../hooks/useStoreApi";
 import { ListItem } from "@mui/material";
 import Item from "../../molecules/Item";
@@ -18,7 +17,7 @@ const ItemList = () => {
     <>
       {products.map((product) => (
         <ListItem key={product.id}>
-          <Item product={product} />
+          <Item  {...product} />
         </ListItem>
       ))}
     </>
