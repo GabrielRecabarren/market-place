@@ -7,27 +7,27 @@ import {
   Typography,
 } from "@mui/material";
 
-export const Item = ({id, name, img, price, onAddToCart}) => {
+export const Item = ({id, title, image, price, onAddToCart}) => {
   
   const handleAddToCartClick = (item) => {
     console.log(item);
     onAddToCart(item);
   };
   return (
-    <Card variant="outlined">
+    <Card variant="outlined" sx={{width:200}}>
       <CardContent>
-        <Typography variant="h5" color="text.primary" gutterBottom>
-          {name}
+        <Typography variant="p" color="text.primary" gutterBottom>
+          {title.length > 30 ? `${title.substring(0,30)}...` : title}
         </Typography>
         <CardMedia
-          sx={{ height: 140 }}
-          image={img}
-          title={name}
+          sx={{ height: 200, width:200}}
+          image={image}
+          title={title}
         />
       </CardContent>
       <CardActions>
         <Button size="small">${price}</Button>
-        <Button variant="contained" onClick={()=> handleAddToCartClick(name)}>Add Item</Button>
+        <Button variant="contained" onClick={()=> handleAddToCartClick(title)}>Add Item</Button>
       </CardActions>
     </Card>
   );

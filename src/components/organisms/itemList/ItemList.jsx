@@ -1,15 +1,26 @@
+
 import { ListItem } from "@mui/material";
 import { Item } from "../../molecules/Item";
 import { ErrorBoundary } from "../../../ErrorBoundary";
-import fakeProduct from "../../../data/fakeProducts.json"
+import useStoreApi from "../../../hooks/useStoreApi";
 export const ItemList = ({ onAddToCart }) => {
+  const {data: products, loading, error} = useStoreApi("products");
+  if (loading) {return <p>Loading...</p>};
+  if(error){
+    return <p>Error al cargar los datos</p>
+  }
   return (
     <ErrorBoundary>
+      
       <ListItem sx={{
-        gap: 5,
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-evenly',
+        gap: 15
+        
       }}>
-        {fakeProduct.map((product, index) => {
-          return <Item key={product.id} {...product} onAddToCart={onAddToCart}></Item>
+        {products.map((product) => {
+          return <Item  key={product.id} {...product} onAddToCart={onAddToCart}></Item>
 
         })
       }
