@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import useApi from "../components/services/useApi";
+import apiInstance from "../components/services/useApi";
 
 // Hook personalizado para obtener datos de la API de FakeStore
 function useStoreApi(endpoint) {
@@ -16,7 +16,7 @@ function useStoreApi(endpoint) {
 		const fetchData = async () => {
 			try {
 				console.log("useStoreApi: Fetching data...");
-				const response = await useApi.get(endpoint);
+				const response = await apiInstance.get(endpoint);
 				setData(response.data);
 				console.log("useStoreApi: Data fetched successfully:", response.data);
 			} catch (error) {
