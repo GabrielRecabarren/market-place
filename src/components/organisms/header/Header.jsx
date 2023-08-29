@@ -4,7 +4,7 @@ import SimpleBadge from "../../molecules/Badge";
 
 
 
-export const Header = ({cartItems, cartItemCount}) => {
+export const Header = () => {
   return (
     <Grid container>
       <Grid item sm={2}>
@@ -14,7 +14,7 @@ export const Header = ({cartItems, cartItemCount}) => {
         <SearchBar />
       </Grid>
       <Grid item xs={2}>
-        <SimpleBadge cartItemCount={cartItemCount} cartItems={cartItems}/>
+        <SimpleBadge />
       </Grid>
     </Grid>
   );

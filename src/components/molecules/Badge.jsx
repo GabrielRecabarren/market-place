@@ -1,14 +1,13 @@
 import * as React from "react";
 import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { useState } from "react";
-import { CartContext } from "../../context/CartContext";
+import { CartContext } from "../../context/ShoppingCartContext";
 
 export default function SimpleBadge() {
-  const cartContext = React.useContext(CartContext);
+  const [cart] = React.useContext(CartContext)
   return (
-    <Badge badgeContent={cartContext} color="success">
-      <ShoppingCartIcon />
+    <Badge badgeContent={cart.length} color="success">
+      <ShoppingCartIcon onClick={()=>{console.log(cart)}}/>
     </Badge>
   );
 }
