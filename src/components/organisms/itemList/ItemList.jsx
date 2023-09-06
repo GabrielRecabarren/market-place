@@ -19,7 +19,9 @@ export const ItemList = () => {
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'space-evenly',
-        gap: 15
+        gap: 15,
+        top:"80px"
+
         
       }}>
         {products.map((product) => {
