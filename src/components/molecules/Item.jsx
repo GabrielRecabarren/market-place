@@ -15,10 +15,7 @@
 
     
     const handleAddToCartClick = (item) => {
-      // Crea un nuevo objeto para el artículo
       
-  
-      // Agrega el nuevo artículo al carrito usando setCart
       setCart([...cart, item]);
     };
     return (
