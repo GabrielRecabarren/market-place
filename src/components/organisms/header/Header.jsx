@@ -10,17 +10,21 @@ export const Header = () => {
       position:"fixed",
       zIndex:999,
       height:"70px",    
-      border: "solid 2px"
+      border: "solid 2px",
+      gap: "10px",
+      
     }} container>
-      <Grid item sm={2}>
+      <Grid item sm={1}>
         
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xs={6} sx={{
+        paddingTop: "6px"
+      }}>
         <SearchBar />
       </Grid>
       <Grid sx={{
         marginTop:"10px",
-        cursor:"pointer"
+        cursor:"pointer",
       }} item xs={4}>
         <SimpleBadge />
       </Grid>

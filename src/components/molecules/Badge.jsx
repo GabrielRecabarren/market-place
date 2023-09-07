@@ -10,18 +10,29 @@ import {
   ItemPrice,
 } from "./cartStyle";
 import { Button } from "@mui/material";
+import { color } from "@mui/system";
 
 export default function SimpleBadge() {
-  const [cart] = React.useContext(CartContext);
+  const [cart, setCart] = React.useContext(CartContext);
   const [cardVisibility, setcardVisibility] = React.useState(false);
 
   const visibilityHandler = () => {
     setcardVisibility(!cardVisibility);
   };
 
+  const resetCartHandler = () => {
+    setCart([]);
+    setTimeout(() => {
+      visibilityHandler();
+    }, 500);
+    
+  }
+
   return (
     <Badge badgeContent={cart.length} color="success">
-      <ShoppingCartIcon
+      <ShoppingCartIcon  
+      fontSize="large"
+      color={cart.length > 0 ? "success" : ""}
         onClick={() => {
           visibilityHandler();
         }}
@@ -31,17 +42,23 @@ export default function SimpleBadge() {
           {cart.slice(0, 5).map((item, index) => (
             <ListItemStyled key={index}>
               <ItemImage
-                sx={{ width: "10px" }}
+                sx={{ width: "40px" }}
                 src={item.image}
                 alt={item.title}
               />
               <ItemText>
                 <div>{item.title}</div>
               </ItemText>
-              <ItemPrice>{item.quantity}</ItemPrice>
+              <ItemPrice sx={{
+                paddingLeft:2
+              }}>{item.quantity}</ItemPrice>
             </ListItemStyled>
-          ))}
-          <Button>Vaciar Carro</Button>
+          ))}{cart.length && <>
+           <Button variant="outlined" color="error" onClick={()=> {
+            resetCartHandler() }} >Vaciar Carro</Button>
+            <Button variant="contained">Comprar</Button>
+          </>}
+         
           {cart.length > 5 && (
             <ListItemStyled>
               <ItemText>Más elementos disponibles...</ItemText>

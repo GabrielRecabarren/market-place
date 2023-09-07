@@ -48,7 +48,7 @@ export const Item = ({ title, image, price }) => {
         <Typography variant="p" color="text.primary" gutterBottom>
           {title.length > 30 ? `${title.substring(0, 30)}...` : title}
         </Typography>
-        <CardMedia sx={{ height: 200, width: 200 }} image={image} title={title} />
+        <CardMedia  sx={{ height: 200 }} image={image} title={title} />
       </CardContent>
       <CardActions>
         <Button size="small">${price}</Button>
