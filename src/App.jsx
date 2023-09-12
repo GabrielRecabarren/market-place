@@ -4,6 +4,7 @@ import { Header } from "./components/organisms/header/Header";
 import { ItemList } from "./components/organisms/itemList/ItemList";
 import CategorySelector from "./components/organisms/category/CategorySelector";
 import Footer from "./components/organisms/footer/Footer";
+<<<<<<< HEAD
 
 function App() {
 	const [cartItems, setCartItems] = useState([]);
@@ -38,6 +39,35 @@ function App() {
 			</Grid>
 		</Grid>
 	);
+=======
+import { ShoppingCartProvider } from "./context/ShoppingCartContext";
+
+function App() {
+  return (
+    <ShoppingCartProvider>
+      <Grid container>
+        <Grid item xs={12}>
+          <Box border={2}>
+            <Header />
+          </Box>
+        </Grid>
+        <Grid item xs={12}>
+          <Box border={2}>
+            <ItemList />
+          </Box>
+        </Grid>
+        <Grid item xs={12} sx={
+          {
+            display: "flex",
+            justifyContent: "center"
+          }
+        }>
+          <Footer />
+        </Grid>
+      </Grid>
+    </ShoppingCartProvider>
+  );
+>>>>>>> 4f3fe9028ab8883ad2ad0ef98870879b904213e8
 }
 
 export default App;

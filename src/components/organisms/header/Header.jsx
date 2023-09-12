@@ -4,17 +4,29 @@ import SimpleBadge from "../../molecules/Badge";
 
 
 
-export const Header = ({cartItems, cartItemCount}) => {
+export const Header = () => {
   return (
-    <Grid container>
-      <Grid item sm={2}>
+    <Grid sx={{
+      position:"fixed",
+      zIndex:999,
+      height:"70px",    
+      border: "solid 2px",
+      gap: "10px",
+      
+    }} container>
+      <Grid item sm={1}>
         
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xs={6} sx={{
+        paddingTop: "6px"
+      }}>
         <SearchBar />
       </Grid>
-      <Grid item xs={2}>
-        <SimpleBadge cartItemCount={cartItemCount} cartItems={cartItems}/>
+      <Grid sx={{
+        marginTop:"10px",
+        cursor:"pointer",
+      }} item xs={4}>
+        <SimpleBadge />
       </Grid>
     </Grid>
   );

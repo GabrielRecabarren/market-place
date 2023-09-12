@@ -3,8 +3,11 @@ import { ListItem } from "@mui/material";
 import { Item } from "../../molecules/Item";
 import { ErrorBoundary } from "../../../ErrorBoundary";
 import useStoreApi from "../../../hooks/useStoreApi";
-export const ItemList = ({ onAddToCart }) => {
+
+export const ItemList = () => {
+
   const {data: products, loading, error} = useStoreApi("products");
+  
   if (loading) {return <p>Loading...</p>};
   if(error){
     return <p>Error al cargar los datos</p>
@@ -16,11 +19,14 @@ export const ItemList = ({ onAddToCart }) => {
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'space-evenly',
-        gap: 15
+        gap: 15,
+        top:"80px",
+        marginBottom:"200px"        
+
         
       }}>
         {products.map((product) => {
-          return <Item  key={product.id} {...product} onAddToCart={onAddToCart}></Item>
+          return <Item  key={product.id} {...product} ></Item>
 
         })
       }
