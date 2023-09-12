@@ -30,7 +30,7 @@ export default function SimpleBadge() {
     <Badge badgeContent={cart.length} color="success">
       <ShoppingCartIcon
         fontSize="large"
-        color={cart.length > 0 ? "success" : ""}
+        color={cart.length > 0 ? "success" : "error"}
         onClick={() => {
           visibilityHandler();
         }}
