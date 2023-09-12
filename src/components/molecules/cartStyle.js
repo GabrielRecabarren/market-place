@@ -2,7 +2,10 @@ import { styled } from "@mui/system";
 import { ListItem } from "@mui/material";
 
 export const ListItemStyled = styled(ListItem)`
-  background: black;
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  
+
   border-bottom: 1px solid #ccc;
   display: flex;
   align-items: center;

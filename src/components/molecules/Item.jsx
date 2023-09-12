@@ -18,7 +18,7 @@ export const Item = ({ title, image, price }) => {
       title: title,
       image: image,
       price: price,
-      quantity:1
+      quantity: 1,
     };
 
     // Verificar si el elemento ya está en el carrito
@@ -43,12 +43,23 @@ export const Item = ({ title, image, price }) => {
   };
 
   return (
-    <Card variant="outlined" sx={{ width: 200 }}>
+    <Card
+      variant="outlined"
+      sx={{
+        width: 200,
+        background: "rgba( 199, 67, 67, 0.18 )",
+        boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+        backdropFilter: "blur( 0px )",
+        WebkitBackdropFilter: "blur( 0px )",
+        borderRadius: "10px",
+        border: "1px solid rgba( 255, 255, 255, 0.18 )"
+      }}
+    >
       <CardContent>
         <Typography variant="p" color="text.primary" gutterBottom>
           {title.length > 30 ? `${title.substring(0, 30)}...` : title}
         </Typography>
-        <CardMedia  sx={{ height: 200 }} image={image} title={title} />
+        <CardMedia sx={{ height: 200 }} image={image} title={title} />
       </CardContent>
       <CardActions>
         <Button size="small">${price}</Button>

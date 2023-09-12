@@ -5,31 +5,29 @@ import Footer from "./components/organisms/footer/Footer";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 
 function App() {
-
-  
-  return (<ShoppingCartProvider>
-    
+  return (
+    <ShoppingCartProvider>
       <Grid container>
         <Grid item xs={12}>
           <Box border={2}>
-            <Header
-             
-            />
-          </Box>  
+            <Header />
+          </Box>
         </Grid>
         <Grid item xs={12}>
           <Box border={2}>
             <ItemList />
           </Box>
         </Grid>
-        <Grid item xs={12}>
-          <Box border={2}>
-            <Footer></Footer>
-          </Box>
+        <Grid item xs={12} sx={
+          {
+            display: "flex",
+            justifyContent: "center"
+          }
+        }>
+          <Footer />
         </Grid>
       </Grid>
-   
-  </ShoppingCartProvider>
+    </ShoppingCartProvider>
   );
 }
 

@@ -20,7 +20,8 @@ export const ItemList = () => {
         flexWrap: 'wrap',
         justifyContent: 'space-evenly',
         gap: 15,
-        top:"80px"
+        top:"80px",
+        marginBottom:"200px"        
 
         
       }}>
