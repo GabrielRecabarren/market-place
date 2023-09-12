@@ -52,14 +52,22 @@ export const Item = ({ title, image, price }) => {
         backdropFilter: "blur( 0px )",
         WebkitBackdropFilter: "blur( 0px )",
         borderRadius: "10px",
-        border: "1px solid rgba( 255, 255, 255, 0.18 )"
+        border: "1px solid rgba( 255, 255, 255, 0.18 )",
+        '&:hover': {
+          transform: 'scale(1.1)', // Cambia el tamaño de la imagen al hacer hover
+          transition: 'transform 0.3s ease', // Agrega una transición suave
+        },
       }}
     >
       <CardContent>
         <Typography variant="p" color="text.primary" gutterBottom>
           {title.length > 30 ? `${title.substring(0, 30)}...` : title}
         </Typography>
-        <CardMedia sx={{ height: 200 }} image={image} title={title} />
+        <CardMedia component="img"
+        sx={{ height: 200,
+        objectFit:"scale-down"
+        
+         }} image={image} title={title} />
       </CardContent>
       <CardActions>
         <Button size="small">${price}</Button>

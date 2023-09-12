@@ -48,7 +48,9 @@ function App() {
       <Grid container>
         <Grid item xs={12}>
           <Box border={2}>
-            <Header />
+            <Header 
+            
+            />
           </Box>
         </Grid>
         <Grid item xs={12}>
