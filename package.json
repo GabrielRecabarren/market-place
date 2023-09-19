@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint:check": "eslint . --ext .ts",
+    "lint:fix": "npx eslint --fix .",
+    "prettier:check": "prettier --check src/**/*.{jsx,js,json}",
+    "prettier:fix": "prettier --write src/**/*.{jsx,js,json}",
     "preview": "vite preview"
   },
   "eslintConfig": {
@@ -30,9 +33,11 @@
     "@types/react-dom": "18.2.6",
     "@vitejs/plugin-react": "4.0.1",
     "eslint": "8.44.0",
+    "eslint-config-prettier": "9.0.0",
     "eslint-plugin-react": "7.32.2",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-react-refresh": "0.4.1",
+    "prettier": "3.0.3",
     "vite": "4.4.9"
   }
 }

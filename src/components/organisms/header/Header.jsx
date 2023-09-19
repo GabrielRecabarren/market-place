@@ -8,24 +8,21 @@ export const Header = () => {
       sx={{
         position: "fixed",
         zIndex: 999,
-        border: "solid 2px",
+        
         height: "70px",
-        
+
         top: 0,
-        left:0,
-        right:0,
-        
+        left: 0,
+        right: 0,
+
         background: "rgba(142, 51, 51, 0.35)",
         boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
         backdropFilter: "blur( 4px )",
         WebkitBackdropFilter: "blur( 4px )",
         borderRadius: "10px",
         border: "1px solid rgba( 255, 255, 255, 0.18 )",
-        
-
       }}
       container
-      
     >
       <Grid item sm={1}></Grid>
       <Grid

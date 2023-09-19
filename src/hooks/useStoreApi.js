@@ -11,20 +11,20 @@ function useStoreApi(endpoint) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    console.log(`useStoreApi: Fetching data from endpoint: ${endpoint}`)
+    console.log(`useStoreApi: Fetching data from endpoint: ${endpoint}`);
     // Función para obtener los datos de la API
     const fetchData = async () => {
       try {
-        console.log('useStoreApi: Fetching data...');
+        console.log("useStoreApi: Fetching data...");
         const response = await useApi.get(endpoint);
         setData(response.data);
-        console.log('useStoreApi: Data fetched successfully:', response.data);
+        console.log("useStoreApi: Data fetched successfully:", response.data);
       } catch (error) {
         setError(error);
-        console.error('useStoreApi: Error fetching data:', error);
+        console.error("useStoreApi: Error fetching data:", error);
       } finally {
         setLoading(false);
-        console.log('useStoreApi: Fetching data complete.');
+        console.log("useStoreApi: Fetching data complete.");
       }
     };
 
