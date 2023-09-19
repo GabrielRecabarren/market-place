@@ -10,7 +10,7 @@ import { useContext } from "react";
 import { CartContext } from "../../context/ShoppingCartContext";
 
 export const Item = ({ title, image, price }) => {
-  const [cart, setCart] = useContext(CartContext);
+  const [cart, setCart,totalItems, setTotalItems] = useContext(CartContext);
 
   // Función para agregar un elemento al carrito o actualizar la cantidad
   const handleAddToCartClick = () => {
@@ -40,6 +40,7 @@ export const Item = ({ title, image, price }) => {
       // Si el elemento no está en el carrito, agrégalo con cantidad 1
       setCart([...cart, { ...newItem, quantity: 1 }]);
     }
+    setTotalItems(totalItems+1);
   };
 
   return (

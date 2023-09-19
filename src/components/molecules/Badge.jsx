@@ -12,22 +12,23 @@ import {
 import { Button, Card, Container } from "@mui/material";
 
 export default function SimpleBadge() {
-  const [cart, setCart] = React.useContext(CartContext);
-  const [cardVisibility, setcardVisibility] = React.useState(false);
+  const [cart, setCart, totalItems, setTotalItems] = React.useContext(CartContext);
+  const [cardVisibility, setCardVisibility] = React.useState(false);
 
   const visibilityHandler = () => {
-    setcardVisibility(!cardVisibility);
+    setCardVisibility(!cardVisibility);
   };
 
   const resetCartHandler = () => {
     setCart([]);
+    setTotalItems(0);
     setTimeout(() => {
       visibilityHandler();
     }, 500);
   };
 
   return (
-    <Badge badgeContent={cart.length} color="success">
+    <Badge badgeContent={totalItems} color="success">
       <ShoppingCartIcon
         fontSize="large"
         color={cart.length > 0 ? "success" : "error"}
