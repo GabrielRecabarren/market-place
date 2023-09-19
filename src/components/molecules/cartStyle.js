@@ -25,5 +25,19 @@ export const ItemText = styled("div")`
 export const ItemPrice = styled("div")`
   font-weight: bold;
 `;
+export const Buttons = styled("div")`
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; /* Centrar horizontalmente los elementos */
+  justify-content:space-evenly;
+  text-align: center;
+`;
+
+export const TotalPrice = styled("div")`
+  background: red;
+  margin:10px
+  font-size:larger;
+  color:white;
+`;
 
 export { List } from "@mui/material"; // Exportamos el componente List de Material-UI

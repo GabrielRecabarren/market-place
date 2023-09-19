@@ -8,11 +8,13 @@ import {
   ItemImage,
   ItemText,
   ItemPrice,
+  TotalPrice,
+  Buttons,
 } from "./cartStyle";
 import { Button, Card, Container } from "@mui/material";
 
 export default function SimpleBadge() {
-  const [cart, setCart, totalItems, setTotalItems] =
+  const [cart, setCart, totalItems, setTotalItems, totalPrice] =
     React.useContext(CartContext);
   const [cardVisibility, setCardVisibility] = React.useState(false);
 
@@ -23,9 +25,8 @@ export default function SimpleBadge() {
   const resetCartHandler = () => {
     setCart([]);
     setTotalItems(0);
-    setTimeout(() => {
-      visibilityHandler();
-    }, 500);
+    visibilityHandler();
+    
   };
 
   return (
@@ -63,9 +64,13 @@ export default function SimpleBadge() {
                 </ItemPrice>
               </ListItemStyled>
             ))}
+            <TotalPrice>{totalPrice}</TotalPrice>
             {cart.length && (
-              <>
+              
+              <Buttons>
+              
                 <Button
+               
                   variant="outlined"
                   color="error"
                   onClick={() => {
@@ -75,7 +80,7 @@ export default function SimpleBadge() {
                   Vaciar Carro
                 </Button>
                 <Button variant="contained">Comprar</Button>
-              </>
+              </Buttons>
             )}
 
             {cart.length > 5 && (
