@@ -48,9 +48,7 @@ function App() {
       <Grid container>
         <Grid item xs={12}>
           <Box border={2}>
-            <Header 
-            
-            />
+            <Header />
           </Box>
         </Grid>
         <Grid item xs={12}>
@@ -58,12 +56,14 @@ function App() {
             <ItemList />
           </Box>
         </Grid>
-        <Grid item xs={12} sx={
-          {
+        <Grid
+          item
+          xs={12}
+          sx={{
             display: "flex",
-            justifyContent: "center"
-          }
-        }>
+            justifyContent: "center",
+          }}
+        >
           <Footer />
         </Grid>
       </Grid>

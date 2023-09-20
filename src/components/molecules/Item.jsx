@@ -10,7 +10,7 @@ import { useContext } from "react";
 import { CartContext } from "../../context/ShoppingCartContext";
 
 export const Item = ({ title, image, price }) => {
-  const [cart, setCart] = useContext(CartContext);
+  const [cart, setCart, totalItems, setTotalItems] = useContext(CartContext);
 
   // Función para agregar un elemento al carrito o actualizar la cantidad
   const handleAddToCartClick = () => {
@@ -40,6 +40,7 @@ export const Item = ({ title, image, price }) => {
       // Si el elemento no está en el carrito, agrégalo con cantidad 1
       setCart([...cart, { ...newItem, quantity: 1 }]);
     }
+    setTotalItems(totalItems + 1);
   };
 
   return (
@@ -53,9 +54,9 @@ export const Item = ({ title, image, price }) => {
         WebkitBackdropFilter: "blur( 0px )",
         borderRadius: "10px",
         border: "1px solid rgba( 255, 255, 255, 0.18 )",
-        '&:hover': {
-          transform: 'scale(1.1)', // Cambia el tamaño de la imagen al hacer hover
-          transition: 'transform 0.3s ease', // Agrega una transición suave
+        "&:hover": {
+          transform: "scale(1.1)", // Cambia el tamaño de la imagen al hacer hover
+          transition: "transform 0.3s ease", // Agrega una transición suave
         },
       }}
     >
@@ -63,11 +64,12 @@ export const Item = ({ title, image, price }) => {
         <Typography variant="p" color="text.primary" gutterBottom>
           {title.length > 30 ? `${title.substring(0, 30)}...` : title}
         </Typography>
-        <CardMedia component="img"
-        sx={{ height: 200,
-        objectFit:"scale-down"
-        
-         }} image={image} title={title} />
+        <CardMedia
+          component="img"
+          sx={{ height: 200, objectFit: "scale-down" }}
+          image={image}
+          title={title}
+        />
       </CardContent>
       <CardActions>
         <Button size="small">${price}</Button>
