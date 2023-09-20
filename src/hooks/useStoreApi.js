@@ -1,38 +1,42 @@
 import { useState, useEffect } from "react";
-import useApi from "../api/useApi";
+import apiInstance from "../api/useApi";
 
 // Hook personalizado para obtener datos de la API de FakeStore
 function useStoreApi(endpoint) {
-  // Estado para almacenar los datos obtenidos de la API
-  const [data, setData] = useState([]);
-  // Estado para controlar si la carga está en progreso
-  const [loading, setLoading] = useState(true);
-  // Estado para manejar errores
-  const [error, setError] = useState(null);
+	// Estado para almacenar los datos obtenidos de la API
+	const [data, setData] = useState([]);
+	// Estado para controlar si la carga está en progreso
+	const [loading, setLoading] = useState(true);
+	// Estado para manejar errores
+	const [error, setError] = useState(null);
 
   useEffect(() => {
-    console.log(`useStoreApi: Fetching data from endpoint: ${endpoint}`)
+    console.log(`useStoreApi: Fetching data from endpoint: ${endpoint}`);
     // Función para obtener los datos de la API
     const fetchData = async () => {
       try {
-        console.log('useStoreApi: Fetching data...');
+        console.log("useStoreApi: Fetching data...");
         const response = await useApi.get(endpoint);
         setData(response.data);
-        console.log('useStoreApi: Data fetched successfully:', response.data);
+       
+        console.log("useStoreApi: Data fetched successfully:", response.data);
       } catch (error) {
         setError(error);
-        console.error('useStoreApi: Error fetching data:', error);
+        console.error("useStoreApi: Error fetching data:", error);
       } finally {
-        setLoading(false);
-        console.log('useStoreApi: Fetching data complete.');
+        setTimeout(() => {
+          
+          setLoading(false);
+        }, 2500);
+        console.log("useStoreApi: Fetching data complete.");
       }
     };
 
-    fetchData();
-  }, [endpoint]);
+		fetchData();
+	}, [endpoint]);
 
-  // Devolver el resultado del hook
-  return { data, loading, error };
+	// Devolver el resultado del hook
+	return { data, loading, error };
 }
 
 export default useStoreApi;

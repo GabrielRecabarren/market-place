@@ -3,7 +3,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 
 export default function SearchBar() {
   return (
-    <Autocomplete 
+    <Autocomplete
       freeSolo
       id="free-solo-2-demo"
       disableClearable
