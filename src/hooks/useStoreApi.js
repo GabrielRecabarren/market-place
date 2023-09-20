@@ -18,12 +18,16 @@ function useStoreApi(endpoint) {
         console.log("useStoreApi: Fetching data...");
         const response = await useApi.get(endpoint);
         setData(response.data);
+       
         console.log("useStoreApi: Data fetched successfully:", response.data);
       } catch (error) {
         setError(error);
         console.error("useStoreApi: Error fetching data:", error);
       } finally {
-        setLoading(false);
+        setTimeout(() => {
+          
+          setLoading(false);
+        }, 2500);
         console.log("useStoreApi: Fetching data complete.");
       }
     };

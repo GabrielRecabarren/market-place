@@ -2,12 +2,13 @@ import { ListItem } from "@mui/material";
 import { Item } from "../../molecules/Item";
 import { ErrorBoundary } from "../../../ErrorBoundary";
 import useStoreApi from "../../../hooks/useStoreApi";
+import { Loader } from "../../molecules/Loader/Loader";
 
 export const ItemList = () => {
   const { data: products, loading, error } = useStoreApi("products");
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <Loader/>;
   }
   if (error) {
     return <p>Error al cargar los datos</p>;
