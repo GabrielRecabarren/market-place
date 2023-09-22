@@ -15,16 +15,16 @@ function useStoreApi(endpoint) {
 		// Función para obtener los datos de la API
 		const fetchData = async () => {
 			try {
-				console.log("useStoreApi: Fetching data...");
+				//console.log("useStoreApi: Fetching data...");
 				const response = await apiInstance.get(endpoint);
 				setData(response.data);
-				console.log("useStoreApi: Data fetched successfully:", response.data);
+				//console.log("useStoreApi: Data fetched successfully:", response.data);
 			} catch (error) {
 				setError(error);
-				console.error("useStoreApi: Error fetching data:", error);
+				//console.error("useStoreApi: Error fetching data:", error);
 			} finally {
 				setLoading(false);
-				console.log("useStoreApi: Fetching data complete.");
+				//console.log("useStoreApi: Fetching data complete.");
 			}
 		};
 

@@ -33,7 +33,7 @@ function App() {
 			</Grid>
 			<Grid item xs={12}>
 				<Box border={2}>
-					<Footer></Footer>
+					<Footer />
 				</Box>
 			</Grid>
 		</Grid>
